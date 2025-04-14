@@ -55,6 +55,7 @@ file(GLOB_RECURSE THEIA_HDRS *.h)
 
 # Add sources
 set(THEIA_SRC
+  image/image.cc
   io/bundler_file_reader.cc
   io/import_nvm_file.cc
   io/populate_image_sizes.cc
@@ -252,6 +253,7 @@ set(THEIA_LIBRARY_DEPENDENCIES
   ${CERES_LIBRARIES}
   ${GFLAGS_LIBRARIES}
   ${GLOG_LIBRARIES}
+  ${OPENIMAGEIO_LIBRARIES}
   #${SUITESPARSE_LIBRARIES}
   flann_cpp_s
   statx
