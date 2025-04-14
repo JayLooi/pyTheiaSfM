@@ -164,14 +164,14 @@ endif (GFLAGS_FOUND)
 list(APPEND THEIA_INCLUDE_DIRS ${GFLAGS_INCLUDE_DIRS})
 
 # OpenImageIO
-#find_package(OpenImageIO QUIET)
-#if (OPENIMAGEIO_FOUND)
-#  message(STATUS "Found Theia dependency: OpenImageIO in ${OPENIMAGEIO_INCLUDE_DIRS}")
-#else (OPENIMAGEIO_FOUND)
-#  theia_report_not_found("Missing required Theia dependency: OpenImageIO. Please set "
-#    "OPENIMAGEIO_INCLUDE_DIR & OPENIMAGEIO_LIBRARY")
-#endif (OPENIMAGEIO_FOUND)
-#list(APPEND THEIA_INCLUDE_DIRS ${OPENIMAGEIO_INCLUDE_DIRS})
+find_package(OpenImageIO REQUIRED)
+if (OPENIMAGEIO_FOUND)
+  message(STATUS "Found Theia dependency: OpenImageIO in ${OPENIMAGEIO_INCLUDE_DIRS}")
+else (OPENIMAGEIO_FOUND)
+  theia_report_not_found("Missing required Theia dependency: OpenImageIO. Please set "
+    "OPENIMAGEIO_INCLUDE_DIR & OPENIMAGEIO_LIBRARY")
+endif (OPENIMAGEIO_FOUND)
+list(APPEND THEIA_INCLUDE_DIRS ${OPENIMAGEIO_INCLUDE_DIRS})
 
 find_package(RocksDB QUIET)
 if (ROCKSDB_FOUND)
