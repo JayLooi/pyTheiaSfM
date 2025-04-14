@@ -9,4 +9,4 @@ docker run -it --rm \
     --volume="$DIR/data:/home/ubuntu/3DSceneRecon/data" \
     --net=host \
     --privileged \
-    3d_scene_recon_pytheiaSfM
+    3d_scene_recon_sfm
